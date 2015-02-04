@@ -14,7 +14,7 @@
 
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="Fel inträffade. Åtgärda felen och försök igen."/>
 
-
+        <%-- Starttemperatur --%>
         <asp:Label ID="StartTempLabel" runat="server" Text="Starttemperatur:"></asp:Label>
         <asp:TextBox ID="StartTempTextBox" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="StartTempRequiredFieldValidator" runat="server" Text="*" ErrorMessage="Ange en Starttemperatur" Display="Dynamic" ControlToValidate="StartTempTextBox"></asp:RequiredFieldValidator>
@@ -22,6 +22,7 @@
    
     </div>
 
+        <%-- Sluttemperatur --%>
         <div>
             <asp:Label ID="EndTempLabel" runat="server" Text="Sluttemperatur:"></asp:Label>
             <asp:TextBox ID="EndTempTextBox" runat="server"></asp:TextBox>
@@ -32,6 +33,7 @@
      
         </div>
 
+                <%-- Temperatursteg --%>
         <div>
             <asp:Label ID="TemperaturstegLabel" runat="server" Text="Temperatursteg:"></asp:Label>
             <asp:TextBox ID="TemperaturstegTextBox" runat="server"></asp:TextBox>
@@ -40,6 +42,7 @@
 
         </div>
 
+                <%-- Typ av konvertering, raidoknappar --%>
         <div>   
             <h3>Typ av konvertering</h3>
             <asp:RadioButton ID="CelsiusToFahrnheit" runat="server" Checked="true" GroupName="Radio"/>
@@ -50,6 +53,7 @@
             <asp:Button ID="ConvertButton" runat="server" Text="Konvertera" OnClick="ConvertButton_Click" />
         </div>
 
+         <%-- Resultat --%>
         <asp:Table ID="TemperatureTable" runat="server" Visible="false"></asp:Table>
 
     </form>

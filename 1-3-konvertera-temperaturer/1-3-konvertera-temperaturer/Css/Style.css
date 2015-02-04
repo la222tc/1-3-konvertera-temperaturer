@@ -1,2 +1,19 @@
 ﻿body {
+
+}
+table {
+    border-collapse: collapse;
+}
+table, th, td{
+   border: 1px solid black;
+   width:200px;
+   text-align:center;
+}
+
+th {
+    background-color:darkgray;
+}
+
+#ValidationSummary1, #StartTempRequiredFieldValidator, #StartTempRequiredFieldValidator, #EndTempRequiredFieldValidator, #EndTempCompareValidator, #TemperaturstegRequiredFieldValidator, #TemperaturstegRangeValidator {
+    color:red;
 }
