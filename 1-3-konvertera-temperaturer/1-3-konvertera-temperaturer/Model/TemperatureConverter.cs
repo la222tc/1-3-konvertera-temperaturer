@@ -9,16 +9,12 @@ namespace _1_3_konvertera_temperaturer.Model
     {
         public static int CelsiusToFahrenheit(int degreesC)
         {
-            int farenheit = (int)Math.Round(degreesC * 1.8 + 32);
-
-            return farenheit;
+            return  (int)Math.Round(degreesC * 1.8 + 32);
         }
 
         public static int FahrenheitToCelsius(int degreesF)
         {
-            int celcius = (int)Math.Round((degreesF - 32) * 5d / 9);
-
-            return celcius;
+            return (int)Math.Round((degreesF - 32) * 5d / 9);
         }
     }
 } 

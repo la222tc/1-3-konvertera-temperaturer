@@ -17,8 +17,10 @@
         <%-- Starttemperatur --%>
         <asp:Label ID="StartTempLabel" runat="server" Text="Starttemperatur:"></asp:Label>
         <asp:TextBox ID="StartTempTextBox" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="StartTempRequiredFieldValidator" runat="server" Text="*" ErrorMessage="Ange en Starttemperatur" Display="Dynamic" ControlToValidate="StartTempTextBox"></asp:RequiredFieldValidator>
-        <asp:CompareValidator ID="StartTempCompareValidator" runat="server" Text="*" ErrorMessage="Endast heltal är tillåtet" ControlToValidate="StartTempTextBox" Display="Dynamic" Type="Integer" Operator="DataTypeCheck"></asp:CompareValidator>
+        <asp:RequiredFieldValidator ID="StartTempRequiredFieldValidator" runat="server" Text="*" 
+            ErrorMessage="Ange en Starttemperatur" Display="Dynamic" ControlToValidate="StartTempTextBox"></asp:RequiredFieldValidator>
+        <asp:CompareValidator ID="StartTempCompareValidator" runat="server" Text="*" ErrorMessage="Endast heltal är tillåtet" 
+            ControlToValidate="StartTempTextBox" Display="Dynamic" Type="Integer" Operator="DataTypeCheck"></asp:CompareValidator>
    
     </div>
 
@@ -26,10 +28,12 @@
         <div>
             <asp:Label ID="EndTempLabel" runat="server" Text="Sluttemperatur:"></asp:Label>
             <asp:TextBox ID="EndTempTextBox" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="EndTempRequiredFieldValidator" runat="server" Text="*" ErrorMessage="Ange en Sluttemperatur" Display="Dynamic" ControlToValidate="EndTempTextBox"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="EndTempRequiredFieldValidator" runat="server" Text="*" 
+                ErrorMessage="Ange en Sluttemperatur" Display="Dynamic" ControlToValidate="EndTempTextBox"></asp:RequiredFieldValidator>
             <asp:CompareValidator ID="EndTempCompareValidator" runat="server" 
                 Text="*" ErrorMessage="Sluttemperaturen måste vara högre än Starttemperaturen"  
-                Display="Dynamic" Type="Integer" Operator="GreaterThanEqual" ControlToCompare="StartTempTextBox" ControlToValidate="EndTempTextBox"></asp:CompareValidator>
+                Display="Dynamic" Type="Integer" Operator="GreaterThanEqual" ControlToCompare="StartTempTextBox" 
+                ControlToValidate="EndTempTextBox"></asp:CompareValidator>
      
         </div>
 
@@ -37,8 +41,11 @@
         <div>
             <asp:Label ID="TemperaturstegLabel" runat="server" Text="Temperatursteg:"></asp:Label>
             <asp:TextBox ID="TemperaturstegTextBox" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="TemperaturstegRequiredFieldValidator" runat="server" Text="*" ErrorMessage="Ange ett Temperatursteg" Display="Dynamic" ControlToValidate="TemperaturstegTextBox"></asp:RequiredFieldValidator>
-            <asp:RangeValidator ID="TemperaturstegRangeValidator" runat="server" Text="*" ErrorMessage="Temperatursteg måste ligga mellan 1 och 100" MinimumValue="1" MaximumValue="100" ControlToValidate="TemperaturstegTextBox" Type="Integer"></asp:RangeValidator>
+            <asp:RequiredFieldValidator ID="TemperaturstegRequiredFieldValidator" runat="server" Text="*" 
+                ErrorMessage="Ange ett Temperatursteg" Display="Dynamic" ControlToValidate="TemperaturstegTextBox"></asp:RequiredFieldValidator>
+            <asp:RangeValidator ID="TemperaturstegRangeValidator" runat="server" Text="*" 
+                ErrorMessage="Temperatursteg måste ligga mellan 1 och 100" MinimumValue="1" MaximumValue="100" 
+                ControlToValidate="TemperaturstegTextBox" Type="Integer"></asp:RangeValidator>
 
         </div>
 
@@ -54,7 +61,12 @@
         </div>
 
          <%-- Resultat --%>
-        <asp:Table ID="TemperatureTable" runat="server" Visible="false"></asp:Table>
+        <asp:Table ID="TemperatureTable" runat="server" Visible="false">
+            <asp:TableHeaderRow>
+                <asp:TableHeaderCell ID="FirstTableHeaderCell">°C</asp:TableHeaderCell>
+                <asp:TableHeaderCell ID="SecondTableHeaderCell">°F</asp:TableHeaderCell>
+            </asp:TableHeaderRow>
+        </asp:Table>
 
     </form>
 </body>

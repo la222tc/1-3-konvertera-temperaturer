@@ -191,5 +191,23 @@ namespace _1_3_konvertera_temperaturer {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table TemperatureTable;
+        
+        /// <summary>
+        /// FirstTableHeaderCell control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableHeaderCell FirstTableHeaderCell;
+        
+        /// <summary>
+        /// SecondTableHeaderCell control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableHeaderCell SecondTableHeaderCell;
     }
 }

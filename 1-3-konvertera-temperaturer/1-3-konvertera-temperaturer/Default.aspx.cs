@@ -19,66 +19,32 @@ namespace _1_3_konvertera_temperaturer
         {
             if (IsValid)
             {
-                TableRow tRow = new TableRow();
-                TableHeaderCell tHeaderCell = new TableHeaderCell();
-                TableHeaderCell tHeaderCell2 = new TableHeaderCell();
-                TableCell tcell = new TableCell();
-
                 int startTemp = int.Parse(StartTempTextBox.Text);
                 int endTemp = int.Parse(EndTempTextBox.Text);
                 int temperaturStep = int.Parse(TemperaturstegTextBox.Text);
 
-                if (CelsiusToFahrnheit.Checked)
+                if (!CelsiusToFahrnheit.Checked)
                 {
-                    TemperatureTable.Rows.Add(tRow);
-                    tHeaderCell.Text = "°C";
-                    tHeaderCell2.Text = "°F";
-                    tRow.Cells.Add(tHeaderCell);
-                    tRow.Cells.Add(tHeaderCell2);
-
-                    for (int i = startTemp; i <= endTemp; i += temperaturStep)
-                    {
-                        tRow = new TableRow();
-                        TemperatureTable.Rows.Add(tRow);
-
-                        tcell = new TableCell();
-                        tRow.Cells.Add(tcell);
-                        tcell.Text = i.ToString();
-
-                        tcell = new TableCell();
-                        tRow.Cells.Add(tcell);
-                        tcell.Text = TemperatureConverter.CelsiusToFahrenheit(i).ToString();
-
-                    }
-
-                    TemperatureTable.Visible = true;
+                    FirstTableHeaderCell.Text = "°F";
+                    SecondTableHeaderCell.Text = "°C";
                 }
 
-                else
+                for (int i = startTemp; i <= endTemp; i += temperaturStep)
                 {
+                    var tRow = new TableRow();
                     TemperatureTable.Rows.Add(tRow);
-                    tHeaderCell.Text = "°F";
-                    tHeaderCell2.Text = "°C";
-                    tRow.Cells.Add(tHeaderCell);
-                    tRow.Cells.Add(tHeaderCell2);
 
-                    for (int i = startTemp; i <= endTemp; i += temperaturStep)
-                    {
-                        tRow = new TableRow();
-                        TemperatureTable.Rows.Add(tRow);
+                    var tcell = new TableCell();
+                    tRow.Cells.Add(tcell);
+                    tcell.Text = i.ToString();
 
-                        tcell = new TableCell();
-                        tRow.Cells.Add(tcell);
-                        tcell.Text = i.ToString();
-
-                        tcell = new TableCell();
-                        tRow.Cells.Add(tcell);
-                        tcell.Text = TemperatureConverter.FahrenheitToCelsius(i).ToString();
-
-                    }
-
-                    TemperatureTable.Visible = true;
+                    tcell = new TableCell();
+                    tRow.Cells.Add(tcell);
+                    tcell.Text = CelsiusToFahrnheit.Checked ? TemperatureConverter.CelsiusToFahrenheit(i).ToString() :
+                        TemperatureConverter.FahrenheitToCelsius(i).ToString();
                 }
+
+                TemperatureTable.Visible = true;
             }
         }
     }
